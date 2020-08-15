@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- Title -->
+    <title>Back Office</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="robots" content="all">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/admin/reset.css">
+    <link rel="stylesheet" href="/css/admin/datepicker.min.css">
+    <link rel="stylesheet" href="/css/admin/components.css">
+    <link rel="stylesheet" href="/css/admin/common.css">
+
+    <!-- Javascript -->
+    <script src="/js/lib/jquery-3.4.1.min.js"></script>
+    <script src="/js/admin/datepicker/datepicker.min.js"></script>
+    <script src="/js/admin/datepicker/i18n/datepicker.ko-KR.js"></script>
+    <script src="/js/admin/common.js"></script>
+
+</head>
+<body>
+<header id="header">
+    <h1 class="logo">
+        <a href="/">Back Office</a>
+    </h1>
+    <div class="utils">
+        <ul>
+            <li>
+                <a href="#" class="signout">Logout</a>
+            </li>
+        </ul>
+    </div>
+</header>
+<main id="container">
+    <div id="gnb">
+        <ul class="deapth1">
+            <li class="on"> <!-- 현재 대 메뉴일 경우 li에 'on' 클래스 추가 -->
+                <a class="item main" href="#">MAIN</a>
+                <ul class="deapth2">
+                    <li><a class="on" href="#">- Visual</a></li> <!-- 현재 페이지 일 경우 a에 'on'클래스 추가 -->
+                </ul>
+            </li>
+            <li>
+                <a class="item news" href="#">고객센터</a>
+                <ul class="deapth2">
+                    <li><a href="#">- 공지사항</a></li>
+                    <li><a href="#">- 언론보도</a></li>
+                    <li><a href="#">- 문의관리</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <section class="contents">
+        <header class="page-header">
+            <h1>Visual</h1>
+        </header>
+        <div class="box-model1">
+            <div class="search-wrap">
+                <form action="" method="">
+                    <span class="label">전체 검색</span>
+                    <fieldset>
+                        <legend class="blind">검색</legend>
+                        <span class="keyword-search">
+                                <input type="text" name="" placeholder="검색어를 입력해 주세요.">
+                            </span>
+                    </fieldset>
+                    <button type="button" class="search-btn button">검색</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="button-group"> <!-- 오른쪽 단일 버튼 -->
+            <a href="#" class="button">등록</a>
+        </div>
+
+        <br>
+
+        <div class="button-group left"> <!-- 왼쪽 단일 버튼 -->
+            <button type="button" class="button left">삭제</button>
+        </div>
+
+        <br>
+
+        <div class="button-group"> <!-- 좌우 버튼 -->
+            <button type="button" class="button left">노출 순서 변경</button>
+            <div class="button-group right">
+                <a href="#" class="button">등록</a>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="button-group"> <!-- 좌우 버튼2 -->
+            <button type="button" class="button left">삭제</button>
+            <div class="button-group right">
+                <button type="button" class="button clear">취소</button>
+                <button type="button" class="button">확인</button>
+            </div>
+        </div>
+    </section>
+</main>
+<footer id="footer">
+    <p class="copyright">Copyright © 2020. All right reserved.</p>
+</footer>
+</body>
+</html>

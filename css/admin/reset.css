@@ -1,0 +1,50 @@
+@charset 'utf-8';
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/*     Reset CSS
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* 여백 초기화*/
+html, body, div, span, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, blockquote, p, b, address, pre, cite, form, fieldset, input, textarea, select, legend, table, th, td, iframe, object, embed, blockquote, abbr, a, acronym, dfn, cite, article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, applet, canvas, details, output, ruby, summary, time, mark, audio, video, button, label, img, span, strong, em, i  {margin:0; padding:0; box-sizing:border-box; -webkit-box-sizing:border-box;}
+
+/* 제목 */
+h1, h2, h3, h4, h5, h6 {font-size:inherit; font-weight:inherit;}
+
+/* 테두리 */
+fieldset, img, abbr, acronym {border:0 none;}
+
+/* 폼요소 */
+button, input[type=submit], input[type=reset], input[type=button] {border:0 none; background-color:transparent; cursor:pointer; overflow:visible;}
+input, select, textarea, button {border:0 none; background:transparent;}
+*:focus {outline:none;}
+input[type=search] {-webkit-appearance:none;}
+input[type=search]::-webkit-search-cancel-button {-webkit-appearance:none;}
+input[type=search]::-ms-clear {display:none; width:0; height:0;}
+input[type=search]::-ms-reveal {display:none; width:0; height:0;}
+
+/* 리스트 */
+ol, ul {list-style:none;}
+
+/* 테이블 */
+table {width:100%; border-collapse:collapse; border-spacing:0; border:0 none;}
+caption, th, td {text-align:left; font-weight:inherit;}
+
+/* 텍스트 */
+address, caption, strong, em, cite {font-weight:inherit; font-style:inherit;}
+ins {text-decoration:none;}
+del {text-decoration:line-through;}
+input, select, textarea, option, label, button {font-size:inherit; font-weight:inherit;}
+mark {background-color:transparent;}
+
+/* 인용문 */
+blockquote, q {quotes:none;}
+blockquote:before, blockquote:after, q:before, q:after {content:''; content:none;}
+
+/* 수평선 */
+hr {display:none;}
+
+/* 앵커 */
+a, a:visited, a:hover, a:active {text-decoration:none;}
+
+/* HTML5 요소 블록화 */
+article, aside, details, figcaption, figure, footer, header, menu, nav, section, main {display:block;}

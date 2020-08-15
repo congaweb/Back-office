@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- Title -->
+    <title>Back Office</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="robots" content="all">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/admin/reset.css">
+    <link rel="stylesheet" href="/css/admin/datepicker.min.css">
+    <link rel="stylesheet" href="/css/admin/components.css">
+    <link rel="stylesheet" href="/css/admin/common.css">
+
+    <!-- Javascript -->
+    <script src="/js/lib/jquery-3.4.1.min.js"></script>
+    <script src="/js/admin/datepicker/datepicker.min.js"></script>
+    <script src="/js/admin/datepicker/i18n/datepicker.ko-KR.js"></script>
+    <script src="/js/admin/common.js"></script>
+
+</head>
+<body>
+<header id="header">
+    <!-- include /html/admin/layout.html -->
+</header>
+<main id="container">
+    <div id="gnb">
+        <!-- include /html/admin/layout.html -->
+    </div>
+    <section class="contents">
+        <header class="page-header">
+            <h1>Heading</h1>
+        </header>
+        <div class="box-model1">
+            <div class="search-wrap">
+                <form action="" method="">
+                    <span class="label">전체 검색</span>
+                    <fieldset>
+                        <legend class="blind">검색</legend>
+                        <span class="keyword-search">
+                                <input type="text" name="" placeholder="검색어를 입력해 주세요.">
+                            </span>
+                    </fieldset>
+                    <button type="button" class="search-btn button">검색</button>
+                </form>
+            </div>
+        </div>
+        <div class="box-model1">
+            <div class="table-toolbar">
+                <div class="select-box">
+                    <label for="filter-list">선택</label>
+                    <select name="" id="filter-list">
+                        <option value="">구분전체</option>
+                        <option value="">구분-1</option>
+                        <option value="">구분-2</option>
+                    </select>
+                </div>
+            </div>
+            <table class="table theme-col">
+                <colgroup>
+                    <col style="width:5%">
+                    <col style="width:5%">
+                    <col style="width:60%">
+                    <col style="width:15%">
+                    <col style="width:15%">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>
+                        <label class="fake-checkbox"><input type="checkbox" id="checkall" class="checkbox"></label>
+                    </th>
+                    <th>번호</th>
+                    <th>기업명</th>
+                    <th>지정현황</th>
+                    <th>공개여부</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <label class="fake-checkbox"><input type="checkbox" class="checkbox" name="chk"></label>
+                    </td>
+                    <td>
+                        <span class="input sequence is-expend"><input type="text" value="1"></span>
+                    </td>
+                    <td class="title"><a href="#">test 제목입니다.</a></td>
+                    <td>2020-03-02</td>
+                    <td>공개</td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="fake-checkbox"><input type="checkbox" class="checkbox" name="chk"></label>
+                    </td>
+                    <td>
+                        <span class="input sequence is-expend secret"> <!-- 비공개 게시물의 경우 "secret" 클래스 추가 -->
+                            <input type="text" value="1" readonly> <!-- 비공개 게시물의 경우 readonly 속성 추가 -->
+                        </span>
+                    </td>
+                    <td class="title"><a href="#">ellipsis test 제목으로 몹시 깁니다. ellipsis test 제목으로 몹시 깁니다. ellipsis test 제목으로 몹시 깁니다. ellipsis test 제목으로 몹시 깁니다. ellipsis test 제목으로 몹시 깁니다. ellipsis test 제목으로 몹시 깁니다. ellipsis test 제목으로 몹시 깁니다. ellipsis test 제목으로 몹시 깁니다. ellipsis test 제목으로 몹시 깁니다. </a></td>
+                    <td>2020-03-02</td>
+                    <td>비공개</td>
+                </tr>
+                <tr class="fixed"> <!-- 고정 게시물일 경우 tr에 "fixed" 클래스 추가 -->
+                    <td>
+                        <label class="fake-checkbox"><input type="checkbox" class="checkbox" name="chk"></label>
+                    </td>
+                    <td>1</td>
+                    <td class="title"><a href="#">고정 게시물 스타일 적용한 제목입니다.</a></td>
+                    <td>2020-03-02</td>
+                    <td>공개</td>
+                </tr>
+                <tr class="add-file"> <!-- 첨부 파일이 있을 경우 tr에 "add-file" 클래스 추가 -->
+                    <td>
+                        <label class="fake-checkbox"><input type="checkbox" class="checkbox" name="chk"></label>
+                    </td>
+                    <td>1</td>
+                    <td class="title"><a href="#">첨부 파일 스타일 적용한 제목입니다.</a></td>
+                    <td>2020-03-02</td>
+                    <td>공개</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="pagination-wrap">
+                <p class="pager"><a class="first" href="#">처음으로</a></p>
+                <p class="pager"><a class="prev" href="#">이전</a></p>
+                <ul class="pagination">
+                    <li><a class="current" href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                </ul>
+                <p class="pager"><a class="next" href="#">다음</a></p>
+                <p class="pager"><a class="last" href="#">마지막으로</a></p>
+            </div>
+        </div>
+
+        <div class="button-group"> <!-- 오른쪽 단일 버튼 -->
+            <a href="#" class="button">등록</a>
+        </div>
+
+        <br>
+
+        <div class="button-group left"> <!-- 왼쪽 단일 버튼 -->
+            <button type="button" class="button left">삭제</button>
+        </div>
+
+        <br>
+
+        <div class="button-group"> <!-- 좌우 버튼 -->
+            <button type="button" class="button left">노출 순서 변경</button>
+            <div class="button-group right">
+                <a href="#" class="button">등록</a>
+            </div>
+        </div>
+    </section>
+</main>
+<footer id="footer">
+    <!-- include /html/admin/layout.html -->
+</footer>
+</body>
+</html>

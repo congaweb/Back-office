@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- Title -->
+    <title>Back Office</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="robots" content="all">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/admin/reset.css">
+    <link rel="stylesheet" href="/css/admin/datepicker.min.css">
+    <link rel="stylesheet" href="/css/admin/components.css">
+    <link rel="stylesheet" href="/css/admin/common.css">
+
+    <!-- Javascript -->
+    <script src="/js/lib/jquery-3.4.1.min.js"></script>
+    <script src="/js/admin/datepicker/datepicker.min.js"></script>
+    <script src="/js/admin/datepicker/i18n/datepicker.ko-KR.js"></script>
+    <script src="/js/admin/common.js"></script>
+
+</head>
+<body>
+<header id="header">
+    <h1 class="logo">
+        <a href="/">Back Office</a>
+    </h1>
+    <div class="utils">
+        <ul>
+            <li>
+                <a href="#" class="signout">Logout</a>
+            </li>
+        </ul>
+    </div>
+</header>
+<main id="container">
+    <div id="gnb">
+        <ul class="deapth1">
+            <li class="on">
+                <a class="item main" href="#">MAIN</a>
+                <ul class="deapth2">
+                    <li><a class="on" href="#">- Visual</a></li> <!-- 현재 페이지 일 경우 a에 'on'클래스 추가 -->
+                </ul>
+            </li>
+            <li>
+                <a class="item news" href="#">고객센터</a>
+                <ul class="deapth2">
+                    <li><a href="#">- 공지사항</a></li>
+                    <li><a href="#">- 언론보도</a></li>
+                    <li><a href="#">- 문의관리</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <section class="contents">
+        <header class="page-header">
+            <h1>Heading</h1>
+        </header>
+        <div class="box-model1">
+            <div class="table-toolbar">
+                <p class="caution">* 는 필수 입력 항목 입니다.</p>
+            </div>
+            <table class="table theme-row">
+                <colgroup>
+                    <col style="width:20%;">
+                    <col style="width:80%;">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th><span class="caution">* </span>제목</th>
+                        <td><span class="input is-expend"><input type="text" placeholder="제목을 입력 해주세요."></span></td>
+                    </tr>
+                    <tr>
+                        <th><span class="caution">* </span>제목</th>
+                        <td class="check-box-wrap">
+                            <span class="input"><input type="text" placeholder="제목을 입력 해주세요."></span>
+                            <span class="check-box">
+                                <input type="checkbox" id="is-main">
+                                <label for="is-main"><i class="icon"></i>공지사항 상단 고정</label>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr> <!-- 단일 파일 업로드 -->
+                        <th><span class="caution">* </span>이미지</th>
+                        <td>
+                            <input type="hidden">
+                            <input type="file" class="blind" id="file-upload-image-pc" onchange="fileUpload.add(this)">
+                            <span class="filepath input"></span>
+                            <label for="file-upload-image-pc" class="button small">찾기</label>
+                            <span class="upload-tip">이미지 사이즈 : 100 * 100</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>링크</th>
+                        <td>
+                            <span class="input"><input type="text" placeholder="http://"></span>
+                            <div class="radio-group">
+                                <span class="radio"><input type="radio" name="target" id="new" checked><label for="new">새창 이동</label></span>
+                                <span class="radio"><input type="radio" name="target" id="current"><label for="current">페이지 이동</label></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span class="caution">* </span>공개여부</th>
+                        <td>
+                            <div class="radio-group">
+                                <span class="radio"><input type="radio" name="public" id="open" checked><label for="open">공개</label></span>
+                                <span class="radio"><input type="radio" name="public" id="secret"><label for="secret">비공개</label></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span class="caution">* </span>연도</th>
+                        <td>
+                            <div class="select-box">
+                                <label for="filter-list">선택</label>
+                                <select name="" id="filter-list">
+                                    <option value="">2019</option>
+                                    <option value="">2018</option>
+                                    <option value="">etc</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span class="caution">* </span>내용</th> <!-- 에디터 적용 영역 -->
+                        <td>
+                            <div class="textarea">
+                                <textarea></textarea>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span class="caution">* </span>보도날짜</th>
+                        <td><span class="input pick-date is-reduce"><input type="text" id="datepicker" readonly></span></td>
+                    </tr>
+                    <tr>
+                        <th>행사일시</th>
+                        <td>
+                            <span class="input pick-date is-reduce"><input type="text" id="start-date" readonly></span>
+                            <span class="dash"> ~ </span>
+                            <span class="input pick-date is-reduce"><input type="text" id="end-date" readonly></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>첨부파일</th>
+                        <td colspan="3">
+                            <div class="addfiles">
+                                <input type="hidden">
+                                <input type="file" class="blind" id="file-upload-addfile0" onchange="fileUpload.add(this)">
+                                <span class="filepath input"></span>
+                                <label for="file-upload-addfile0" class="button small">찾기</label>
+                                <button type="button" class="button small more-file" onclick="addFiles.add(this)">+</button>
+                                <button type="button" class="button small remove-file" onclick="fileUpload.del(this)">-</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr> <!-- 멀티 파일 업로드 -->
+                        <th><span class="caution">* </span>멀티파일</th>
+                        <td>
+                            <div class="mutifiles">
+                                <input type="hidden">
+                                <input type="file" multiple class="blind" id="file-upload-slide" onchange="multiImage.addImage(this);">
+                                <label for="file-upload-slide" class="button small">찾기</label>
+                                <span class="upload-tip">이미지 사이즈 : 100 * 100</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>주소</th>
+                        <td><span class="input is-expend"><input type="text"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="button-group">
+            <button type="button" class="button left">삭제</button>
+            <div class="button-group right">
+                <button type="button" class="button clear">취소</button>
+                <button type="button" class="button">확인</button>
+            </div>
+        </div>
+    </section>
+</main>
+<footer id="footer">
+    <p class="copyright">Copyright © 2020. All right reserved.</p>
+</footer>
+</body>
+</html>

@@ -1,4 +1,10 @@
 $(function () {
+	$('.deapth1>li').each(function (index, dom) {
+		if ($(dom).hasClass('on')) {
+			$(dom).find('.deapth2').show();
+		}
+	});
+	
 	// gnb
 	$('.deapth1 .item').click(function () {
 		$('.deapth1>li').removeClass('on');
@@ -16,25 +22,45 @@ $(function () {
 	});
 
 	// checkbox
-	var checkbox = $('.checkbox');
+	// var checkbox = $('.checkbox');
 	var checkAll = $('#checkall');
-	checkbox.on('click', function () {
+	var targetCheckbox = $('table tbody .checkbox');
+	var targetLength = targetCheckbox.length;
+
+	targetCheckbox.on('click', function () {
 		if ($(this).prop('checked')) {
 			$(this).parent('.fake-checkbox').addClass('checked');
 		} else {
 			$(this).parent('.fake-checkbox').removeClass('checked');
 		}
+		setAllCheckbox();
 	});
 
 	checkAll.on('click', function () {
 		if ($(this).prop('checked')) {
 			$('input[name=chk]').prop('checked', true);
 			$('input[name=chk]').parent('.fake-checkbox').addClass('checked');
+			$(this).prop('checked', true);
+			$(this).parent().addClass('checked');
 		} else {
 			$('input[name=chk]').prop('checked', false);
 			$('input[name=chk]').parent('.fake-checkbox').removeClass('checked');
+			$(this).prop('checked', false);
+			$(this).parent().removeClass('checked');
 		}
 	});
+
+	function setAllCheckbox(){
+		var getChecked = $('table tbody .checkbox:checked');
+		var getCheck = getChecked.length;
+		if (targetLength == getCheck) {
+			checkAll.prop('checked', true);
+			checkAll.parent().addClass('checked');
+		} else {
+			checkAll.prop('checked', false);
+			checkAll.parent().removeClass('checked');
+		}
+	}
 
 	// pagination
 	var pageNum = $('.pagination a')
@@ -63,8 +89,8 @@ $(function () {
 	$(document).on('change', '#start-date', (e) => {
 		e.preventDefault();
 		//Get text values for depart and return
-		const departText = $(e.target).val();
-		const returnText = $('#end-date').val();
+		var departText = $(e.target).val();
+		var returnText = $('#end-date').val();
 		//Get dates for depart and return
 		var departDate = new Date(departText);
 		var returnDate = new Date(returnText);
@@ -73,6 +99,8 @@ $(function () {
 			$('#end-date').datepicker('setStartDate', departText);
 			$('#end-date').datepicker('setDate', departText);
 			$('#end-date').val('');
+		} else if (returnDate > departDate) {
+			$('#end-date').datepicker('setStartDate', departText);
 		}
 	});
 }); //E

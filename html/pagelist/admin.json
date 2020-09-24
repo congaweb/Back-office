@@ -1,32 +1,60 @@
-[{
-  "categories" : "공통",
-  "items" : [{
-      "depth2": "로그인",
-      "depth3": "",
-      "depth4": "",
-      "url": "/html/admin/login.html",
-      "complete": true,
-      "memo": "로그인 폼"
-    },{
-      "depth2": "레이아웃",
-      "depth3": "",
-      "depth4": "",
-      "url": "/html/admin/layout.html",
-      "complete": true,
-      "memo": "헤더, GNB, 푸터, 버튼 스타일"
-    },{
-    "depth2": "list 레이아웃",
-    "depth3": "",
-    "depth4": "",
-    "url": "/html/admin/list_layout.html",
-    "complete": true,
-    "memo": "리스트 페이지용 레이아웃"
-  },{
-    "depth2": "view 레이아웃",
-    "depth3": "",
-    "depth4": "",
-    "url": "/html/admin/view_layout.html",
-    "complete": true,
-    "memo": "뷰 페이지용 레이아웃"
-  }]
-}]
+[
+  {
+    "categories": "데모",
+    "items": [
+      {
+        "depth2": "리스트",
+        "depth3": "",
+        "depth4": "",
+        "url": "/html/admin/index.html",
+        "complete": true,
+        "memo": "리스트 데모"
+      },
+      {
+        "depth2": "상세 페이지",
+        "depth3": "",
+        "depth4": "",
+        "url": "/html/admin/view.html",
+        "complete": true,
+        "memo": "상세 페이지 데모"
+      }
+    ]
+  },
+  {
+    "categories": "공통",
+    "items": [
+      {
+        "depth2": "로그인",
+        "depth3": "",
+        "depth4": "",
+        "url": "/html/admin/layout/login.html",
+        "complete": true,
+        "memo": "로그인 폼"
+      },
+      {
+        "depth2": "레이아웃",
+        "depth3": "",
+        "depth4": "",
+        "url": "/html/admin/layout/layout.html",
+        "complete": true,
+        "memo": "헤더, GNB, 푸터, 버튼 스타일"
+      },
+      {
+        "depth2": "list 레이아웃",
+        "depth3": "",
+        "depth4": "",
+        "url": "/html/admin/layout/list_layout.html",
+        "complete": true,
+        "memo": "리스트 페이지용 레이아웃"
+      },
+      {
+        "depth2": "view 레이아웃",
+        "depth3": "",
+        "depth4": "",
+        "url": "/html/admin/layout/view_layout.html",
+        "complete": true,
+        "memo": "뷰 페이지용 레이아웃"
+      }
+    ]
+  }
+]

@@ -4,7 +4,7 @@ $(function () {
 			$(dom).find('.deapth2').show();
 		}
 	});
-	
+
 	// gnb
 	$('.deapth1 .item').click(function () {
 		$('.deapth1>li').removeClass('on');
